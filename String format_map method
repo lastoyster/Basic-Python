@@ -1,0 +1,9 @@
+#The format_map() method is similar to str.format(**mapping)
+#except that str.format(**mapping) creates a new dictionary 
+#whereas str.format_map(mapping) doesn't.
+
+point = {'x':4,'y':-5}
+print('{x} {y}'.format_map(point))
+
+point = {'x':4,'y':-5,'z':0}
+print('{x} {y} {z}'.format_map(point))
