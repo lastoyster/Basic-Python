@@ -1,0 +1,28 @@
+print("This is by using built- in Python lists:")
+P=[1,2,3,4]
+print(P)
+K=P
+P[1]=-2
+print (K)
+print(P)
+K=P[1:3]
+print (K)
+K[0]=0
+print (K)
+print (P)
+
+
+
+print("This is by using NumPy arrays:")
+import numpy as np
+L=np.array([1,2,3,4])
+print (L)
+E=L
+E[1]=-2
+print (E)
+print (L)
+E=L[1:3]
+print(E)
+E[0]=0
+print (E)
+print(L)
