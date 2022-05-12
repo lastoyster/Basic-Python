@@ -1,0 +1,137 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled23.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "toc_visible": true,
+      "mount_file_id": "17YzCMkx-9z9nOsWFNvfjvLOnpJfbvrgW",
+      "authorship_tag": "ABX9TyO6TyaL9y04cqxv4PFOtZeM",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/lastoyster/Basic-Python/blob/main/Country%20Basic%20Info\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lPd067ByBH-R",
+        "outputId": "4e216e90-30e8-4ca8-fa44-ad96599c4c53"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: countryinfo in /usr/local/lib/python3.7/dist-packages (0.1.2)\n",
+            "['KR', 'Republic of Korea']\n",
+            "Seoul\n",
+            "['KRW']\n",
+            "['ko']\n",
+            "['UTC+09:00']\n",
+            "100210\n",
+            "['PRK']\n",
+            "['82']\n",
+            "http://en.wikipedia.org/wiki/korea_south\n",
+            "http://en.wikipedia.org/wiki/korea_south\n",
+            "name --> South Korea\n",
+            "altSpellings --> ['KR', 'Republic of Korea']\n",
+            "area --> 100210\n",
+            "borders --> ['PRK']\n",
+            "callingCodes --> ['82']\n",
+            "capital --> Seoul\n",
+            "capital_latlng --> [37.566679, 126.978291]\n",
+            "currencies --> ['KRW']\n",
+            "demonym --> South Korean\n",
+            "flag --> \n",
+            "geoJSON --> {'type': 'FeatureCollection', 'features': [{'type': 'Feature', 'id': 'KOR', 'properties': {'name': 'South Korea'}, 'geometry': {'type': 'Polygon', 'coordinates': [[[128.349716, 38.612243], [129.21292, 37.432392], [129.46045, 36.784189], [129.468304, 35.632141], [129.091377, 35.082484], [128.18585, 34.890377], [127.386519, 34.475674], [126.485748, 34.390046], [126.37392, 34.93456], [126.559231, 35.684541], [126.117398, 36.725485], [126.860143, 36.893924], [126.174759, 37.749686], [126.237339, 37.840378], [126.68372, 37.804773], [127.073309, 38.256115], [127.780035, 38.304536], [128.205746, 38.370397], [128.349716, 38.612243]]]}}]}\n",
+            "ISO --> {'alpha2': 'KR', 'alpha3': 'KOR'}\n",
+            "languages --> ['ko']\n",
+            "latlng --> [37, 127.5]\n",
+            "nativeName --> 대한민국\n",
+            "population --> 50423955\n",
+            "provinces --> [\"Ch'ungch'ong-bukto\", \"Ch'ungch'ong-namdo\", 'Cheju-do', 'Cholla-bukto', 'Cholla-namdo', \"Inch'on-gwangyoksi\", 'Kangwon-do', 'Kwangju-gwangyoksi', 'Kyonggi-do', 'Kyongsang-bukto', 'Kyongsang-namdo', 'Pusan-gwangyoksi', \"Soul-t'ukpyolsi\", 'Taegu-gwangyoksi', 'Taejon-gwangyoksi', 'Ulsan-gwangyoksi']\n",
+            "region --> Asia\n",
+            "subregion --> Eastern Asia\n",
+            "timezones --> ['UTC+09:00']\n",
+            "tld --> ['.kr']\n",
+            "translations --> {'de': 'Südkorea', 'es': 'Corea del Sur', 'fr': 'Corée du Sud', 'ja': '大韓民国', 'it': 'Corea del Sud'}\n",
+            "wiki --> http://en.wikipedia.org/wiki/korea_south\n"
+          ]
+        }
+      ],
+      "source": [
+        "!pip install countryinfo\n",
+        "from countryinfo import CountryInfo\n",
+        "\n",
+        "name = 'South Korea'\n",
+        "country= CountryInfo(name)\n",
+        "\n",
+        "data1 = country.alt_spellings()\n",
+        "print(data1)\n",
+        "\n",
+        "data2 = country.capital()\n",
+        "print(data2)\n",
+        "\n",
+        "data3 = country.currencies()\n",
+        "print(data3)\n",
+        "\n",
+        "data4 = country.languages()\n",
+        "print(data4)\n",
+        "\n",
+        "data5 = country.timezones()\n",
+        "print(data5)\n",
+        "\n",
+        "data6 = country.area()\n",
+        "print(data6)\n",
+        "\n",
+        "data7 = country.borders()\n",
+        "print(data7)\n",
+        "\n",
+        "data8 = country.calling_codes()\n",
+        "print(data8)\n",
+        "\n",
+        "data9 = country.wiki()\n",
+        "print(data9)\n",
+        "\n",
+        "data10 = country.info()\n",
+        "print(data9)\n",
+        "\n",
+        "data10 = country.info()\n",
+        "for x,y in data10.items():\n",
+        "  print(f'{x} --> {y}')"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# New Section"
+      ],
+      "metadata": {
+        "id": "b-bY7UduGtnt"
+      }
+    }
+  ]
+}
